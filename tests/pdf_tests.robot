@@ -3,6 +3,9 @@ Resource                    ../resources/common_pdf.robot
 Suite Setup                 Setup Browser
 Suite Teardown              End Suite
 
+*** Variables ***
+${FILE_PATH}          ${CURDIR}/../pdf_download_icon.png
+${SUITE}              ${EMPTY}
 
 *** Test Cases ***
 Read PDF Text
@@ -19,15 +22,16 @@ Read PDF Text
 
     # Live Testing and normal test runs use different execution and download directories
     # and that needs to be taken into account
-    IF    "${EXECDIR}" == "/home/executor/execution"    # normal test run environment
-        ${test_suite}=          Evaluate    "${SUITE NAME}".lower().split(".")[0]
-        ${reference_folder}=    Set Variable    ${EXECDIR}/${test_suite}/resources/images
-        ${downloads_folder}=    Set Variable    /home/executor/Downloads
-    ELSE    # Live Testing environment
-        ${reference_folder}=    Set Variable    ${EXECDIR}/../resources/images
-        ${downloads_folder}=    Set Variable    /home/services/Downloads
-    END
+     IF    "${EXECDIR}" == "/home/executor/execution"    # normal test run environment
+         ${test_suite}=          Evaluate    "${SUITE NAME}".lower().split(".")[0]
+    #     ${reference_folder}=    Set Variable    ${EXECDIR}/${test_suite}/resources/images
+         ${downloads_folder}=    Set Variable    /home/executor/Downloads
+     ELSE    # Live Testing environment
+    #     ${reference_folder}=    Set Variable    ${EXECDIR}/../resources/images
+         ${downloads_folder}=    Set Variable    /home/services/Downloads
+     END
 
+    ${reference_folder}=   Set Variable     ${CURDIR}
     # Use QVision library to access elements on the pdf viewer
     QVision.SetReferenceFolder   ${reference_folder}
     QVision.ClickIcon       pdf_download_icon
