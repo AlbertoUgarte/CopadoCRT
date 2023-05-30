@@ -56,6 +56,7 @@ Read PDF Text
     ${find_position}        Evaluate    $file_content.find("${text_in_file}")
     ${onsight_address}      Evaluate    $file_content[$find_position:$find_position+77].lstrip("${text_in_file}; ")
     Log                     ${onsight_address}    console=true
-
     CloseWindow
     SwitchWindow            1
+
+    #if PDF opened in a new tab  in the new tab you should be able to use QWeb kw Get PDF Text  to dump the contents of the flle in a var and then verify there
