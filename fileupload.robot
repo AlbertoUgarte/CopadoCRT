@@ -5,7 +5,7 @@ Suite Setup             Open Browser    about:blank    chrome
 Suite Teardown          Close All Browsers
 
 *** Variables ***
-${FILE}                 my_data.txt
+${FILE}                 PDF Sample 123.pdf
 ${SUITE}                ${EMPTY}
 
 *** Test Cases ***
