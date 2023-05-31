@@ -30,6 +30,7 @@ Read PDF Text
 
     # Use QVision library to access elements on the pdf viewer
     QVision.SetReferenceFolder   ${reference_folder}
+    List Files In Directory    ${reference_folder}
     QVision.ClickIcon       pdf_download_icon
     ExpectFileDownload
     QVision.ClickText       Save    anchor=Cancel
