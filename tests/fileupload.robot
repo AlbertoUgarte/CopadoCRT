@@ -5,9 +5,9 @@ Suite Teardown          Close All Browsers
 
 *** Variables ***
 
-#${FILE_PATH}          ${CURDIR}/../PDF Sample 123.pdf
+${FILE_PATH}          ${CURDIR}/../PDF Sample 123.pdf
 ${SUITE}              ${EMPTY}
-${FILE_PATH}         Set Variable    ${CURDIR}/resources/data/PDF Sample 123.pdf
+#${FILE_PATH}         Set Variable    ${CURDIR}/resources/data/PDF Sample 123.pdf
 *** Test Cases ***
 File Upload
     [Documentation]    Upload a file on Heroku test page.
