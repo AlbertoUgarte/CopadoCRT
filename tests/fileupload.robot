@@ -4,7 +4,6 @@ Suite Setup             Open Browser    about:blank    chrome
 Suite Teardown          Close All Browsers
 
 *** Variables ***
-
 ${FILE_PATH}          ${CURDIR}/../resources/data/PDF Sample 123.pdf
 ${SUITE}              ${EMPTY}
 #${FILE_PATH}         Set Variable    ${CURDIR}/resources/data/PDF Sample 123.pdf
